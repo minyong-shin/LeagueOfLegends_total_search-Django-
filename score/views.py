@@ -1,5 +1,6 @@
 from django.shortcuts import render
-import requests
+from django.utils import timezone
+from django.shortcuts import render, get_object_or_404
 # Create your views here.
 
 #LOL 전적 검색
