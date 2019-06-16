@@ -25,7 +25,7 @@ SECRET_KEY = 'u_@xb8b0tz)c%8j5ce(ne1=o4m!ivnzg$2n!-=_xtitmosj2@f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']#pythonanywhere url 설정하기 위해서 꼭 필요!
 
 
 # Application definition
@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
