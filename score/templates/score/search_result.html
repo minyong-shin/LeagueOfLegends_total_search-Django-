@@ -11,14 +11,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/lol.css' %}">
 </head>
 <title>전적검색</title>
 <body>
     <div class="page-header">
         <center>
-            <h1><a href="">연습용 롤 전적검색</a></h1>
-            <h3>MY.GG</h3>
+            <h1><a href="/">연습용 롤 전적검색</a></h1>
+            <h3 class="only_my.gg">MY.GG</h3>
         </center>
     </div>
     <div class="container">
@@ -38,7 +40,7 @@
         <div class="row" style="margin: 40px; float: none;">
 
             <img style="display: block; margin: 0px" class="img-thumbnail" src="{% static 'images/profileicon/' %}{{summoners_result.profileIconId}}.png">
-            <span style="margin: 20 0 0 20; font-size: 32px;">
+            <span style="margin: 20 0 0 20; font-size: 32px;" class="box_font">
                 {{ summoners_result.name }}<br>
                 <span style="font-size: 20px; ">LV: {{ summoners_result.level }}</span>
             </span>
@@ -52,7 +54,7 @@
                     <div class="col-4">
                         <img src="{% static 'images/emblems/Emblem_' %}{{solo_tier.tier}}.png" width="100%">
                     </div>
-                    <div>
+                    <div class="box_font">
                         리그: {{ solo_tier.rank_type }}<br>
                         티어: {{ solo_tier.tier }} {{ solo_tier.rank }}<br>
                         포인트: {{ solo_tier.points }}<br>
@@ -73,14 +75,14 @@
                     <div class="col-4">
                         <img src="{% static 'images/emblems/Emblem_' %}{{team_tier.tier}}.png" width="100%">
                     </div>
-                    <div>
+                    <div class="box_font">
                         리그: {{ team_tier.rank_type }}<br>
                         티어: {{ team_tier.tier }} {{ team_tier.rank }}<br>
                         포인트: {{ team_tier.points }}<br>
                         전적: {{ team_tier.wins|add:team_tier.losses}}전 {{ team_tier.wins }}승 {{ team_tier.losses }}패
                     </div>
                     {% else %}
-                    <div>
+                    <div class="box_font">
                         배치&전적정보없음
                     </div>
                     {% endif %}

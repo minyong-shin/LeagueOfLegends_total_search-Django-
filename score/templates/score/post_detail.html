@@ -24,40 +24,18 @@
             <h3>MY.GG</h3>
         </center>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <form method="get" name="search_form" action="{% url 'score:search_result' %}">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="소환사명" name="search_text" value="{{search_text}}">
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="submit">MY.GG</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="community-header">
-        <center>
-            <h2><a href="post_list">롤 게시판</a></h2>
-        </center>
-    </div>
     <div class="content-container2">
         <div class="row">
             <div class="col-md-8">
-                {% for post in posts %}
                 <div class="post">
-                    <p>
-                        <a href="{% url 'score:post_detail' pk=post.pk %}" class="community_title">{{ post.title }}</a>
-                    </p>
-                    <div class="text-margin">
-                        <div class="date">
-                            <p>글올린날짜: {{ post.published_date }}</p><br>
-                        </div>
+                    {% if post.published_date %}
+                    <div class="date">
+                        {{ post.published_date }}
                     </div>
+                    {% endif %}
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
